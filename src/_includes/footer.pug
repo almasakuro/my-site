@@ -1,0 +1,9 @@
+- const year = new Date().getFullYear()
+- const socials = [{ href: "https://t.me/almasakuro", icon: "telegram", name: "Телеграм" }, { href: "https://www.instagram.com/almasakuro/", icon: "instagram", name: "Инстаграм" }, { href: "https://www.youtube.com/@almasakuro", icon: "youtube", name: "Ютуб" }, { href: "https://www.tiktok.com/@almasakuro", icon: "tiktok", name: "Тикток" }, { href: "https://www.linkedin.com/in/almas-akzhigitov/", icon: "linkedin", name: "Линкедин" }, { href: "https://www.pinterest.com/almasakuro/", icon: "pinterest", name: "Пинтерест" }]
+
+footer.layout_container
+  each social in socials
+    a.social_link(href=social.href, target="_blank", rel="me noopener")
+      img.social(src="/images/" + social.icon + "_icon.svg", alt=social.name)
+
+  p.caption © 2025—#{year} Алмас Акжигитов

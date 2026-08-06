@@ -1,0 +1,260 @@
+/* Сброс стилей */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body, h1, h2, h3, h4, p, ul, ol, li,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img, picture, video, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, textarea, select, button {
+  font: inherit;
+}
+
+/* Основная часть */
+@font-face {
+    font-family: 'PT Astra Sans';
+    src: url(/fonts/PT-Astra-Sans_Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Astra Sans';
+    src: url(/fonts/PT-Astra-Sans_Bold.ttf) format("truetype");
+    font-weight: bold;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'PT Astra Sans';
+    src: url(/fonts/PT-Astra-Sans_Italic.ttf) format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PT Astra Sans';
+    src: url(/fonts/PT-Astra-Sans_Bold-Italic.ttf) format("truetype");
+    font-weight: bold;
+    font-style:italic;
+}
+
+@font-face {
+    font-family: 'PT Astra Serif';
+    src: url(/fonts/PT-Astra-Serif_Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Astra Serif';
+    src: url(/fonts/PT-Astra-Serif_Bold.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Astra Serif';
+    src: url(/fonts/PT-Astra-Serif_Italic.ttf) format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PT Astra Serif';
+    src: url(/fonts/PT-Astra-Serif_Bold-Italic.ttf) format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url(/fonts/JetBrainsMono-Regular.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root{
+    --white: #ffffff;
+    --black: #000000;
+    --link-blue: #5896FF;
+    --link-underline: rgba(88, 150, 255, 0.5);
+    --link-red: #FF585B;
+    --code-green: #6CFA6E;
+    --gray: #606060;
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+body{
+    background-color: var(--black);
+    color: var(--white);
+    font-family: PT Astra Sans, Helvetica Neue, Helvetica, Arial, sans-serif;;
+}
+
+.layout_container{
+    width: min(1400px, 100% - 40px);
+    margin-inline: auto;
+}
+
+@media (width > 960px) {
+    .layout_container{
+        width: min(1400px, 100% - 80px);
+    }
+}
+
+.edge_to_edge{
+    margin-inline: calc(50% - 50vw);
+    background-color: #5896FF;
+    height: 400px;
+}
+.not_layout_container{
+    background-color: #6CFA6E;
+    height: 200px;
+}
+
+h1, h2, h3, p{
+    font-family: PT Astra Serif, 'Times New Roman', Times, serif;
+    max-width: 900px;
+}
+
+.caption{
+    font-family: PT Astra Sans, Helvetica Neue, Helvetica, Arial, sans-serif;;
+    max-width: 1040px;
+    font-size: 1em
+}
+
+h1{
+    font-size: 4em;
+    line-height: 1;
+    font-weight: 400;
+}
+
+h2{
+    font-size: 1.75em;
+    line-height: 1;
+    font-weight: 400;
+}
+
+h3{ 
+    font-size: 1em;
+    font-weight: bold;
+}
+
+a{
+    color: var(--link-blue);
+    text-decoration-thickness: 1px;
+    text-underline-offset: .175em;
+    text-decoration-color: var(--link-underline);
+    text-decoration-skip: none;
+    text-decoration-skip-ink: none;
+}
+
+a:hover{
+    color: var(--link-red);
+    text-decoration-color: var(--link-red);
+}
+
+code{
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--code-green);
+}
+
+header{
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header img{
+    height: 88px;
+}
+
+.welcome-text{
+    margin-top: 20px;
+    max-width: 900px;
+    font-family: PT Astra Sans;
+    font-size: 2em;
+    line-height: 1.2;
+}
+
+footer{
+    height: 120px;
+    margin-top: 200px;
+    gap: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(6, auto) 1fr auto;
+
+    align-items: center;
+}
+footer .caption{
+    grid-column: 8;
+}
+
+.social{
+    width: 40px;
+    aspect-ratio: 1/1;
+}
+
+.projects{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px 40px;
+    grid-auto-rows: minmax(200px, auto);
+}
+@media (width < 1000px) {
+    .projects{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (width < 700px) {
+    .projects{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (width < 400px) {
+    .projects{
+        grid-template-columns: 1fr;
+    }
+}
+
+.project{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-big{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+@media (width < 400px) {
+    .project-big{
+        grid-column: auto;
+        grid-row: auto;
+    }
+}

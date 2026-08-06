@@ -1,0 +1,24 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    title= title ? title + " — Алмас Акжигитов" : "Алмас Акжигитов"
+    meta(name="description" content=description || "Алмас Акжигитов — дизайнер из Астаны. Графика, веб, айдентика, интерфейсы.")
+
+    link(rel="canonical" href="https://almasakzhigitov.com" + page.url)
+
+    link(rel="stylesheet" href="/css/style.css")
+
+    meta(property="og:type" content="website")
+    meta(property="og:title" content=title || "Алмас Акжигитов")
+    meta(property="og:url" content="https://almasakzhigitov.com" + page.url)
+
+  body
+    include header.pug
+
+    main.main
+      != content
+
+    include footer.pug
