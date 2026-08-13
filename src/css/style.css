@@ -111,25 +111,19 @@ body{
     font-family: PT Astra Sans, Helvetica Neue, Helvetica, Arial, sans-serif;;
 }
 
-.layout_container{
+.layout-container{
     width: min(1400px, 100% - 40px);
     margin-inline: auto;
 }
 
 @media (width > 960px) {
-    .layout_container{
+    .layout-container{
         width: min(1400px, 100% - 80px);
     }
 }
 
-.edge_to_edge{
+.edge-to-edge{
     margin-inline: calc(50% - 50vw);
-    background-color: #5896FF;
-    height: 400px;
-}
-.not_layout_container{
-    background-color: #6CFA6E;
-    height: 200px;
 }
 
 h1, h2, h3, p{
@@ -227,7 +221,7 @@ article li + li{
 
 /* Заголовочный блок */
 
-article > .label_nav + h1{
+article > .label-nav + h1{
     margin-top: 1.25rem;
 }
 
@@ -239,19 +233,19 @@ article > h1 + p{
 
 article > * + img,
 article > * + video,
-article > * + .small_image_group{
+article > * + .small-image-group{
     margin-top: 2.5rem;
 }
 
 article > img + p,
 article > video + p,
-article > .small_image_group + p{
+article > .small-image-group + p{
     margin-top: 3.75rem;
 }
 
 article > img + .caption,
 article > video + .caption,
-article > .small_image_group + .caption{
+article > .small-image-group + .caption{
     margin-top: 10px;
 }
 
@@ -342,26 +336,26 @@ footer .caption{
         grid-row: auto;
     }
 }
-.label_nav{
+.label-nav{
     display: flex;
     flex-direction: row;
     align-items: baseline;
     gap: 0.5em;
 }
 
-.label_nav [aria-current]{
+.label-nav [aria-current]{
     color: var(--white);
     text-decoration-color: var(--white);
 }
 
-.small_image_group{
+.small-image-group{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
 @media (width < 960px) {
-    .small_image_group{
+    .small-image-group{
         grid-template-columns: 1fr;
     }
 }

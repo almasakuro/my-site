@@ -14,11 +14,13 @@ html(lang="ru")
     meta(property="og:type" content="website")
     meta(property="og:title" content=title || "Алмас Акжигитов")
     meta(property="og:url" content="https://almasakzhigitov.com" + page.url)
+    if banner
+      meta(property="og:image" content="https://almasakzhigitov.com" + banner)
 
   body
     include header.pug
 
-    main.layout_container
+    main.layout-container
       != content
 
     include footer.pug

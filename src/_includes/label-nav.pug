@@ -1,7 +1,7 @@
 - const siblings = collections.projects.filter(item => item.data.client === client)
 
 if siblings.length > 1
-  div.label_nav
+  div.label-nav
     p.caption #{client}:
     each item in siblings
       a(href=item.url, aria-current=(item.url === page.url ? "page" : false))= item.data.local_title
