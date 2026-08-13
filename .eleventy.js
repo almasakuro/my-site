@@ -2,6 +2,17 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const pugPlugin = require("@11ty/eleventy-plugin-pug").default;
+const Typograf = require("typograf");
+
+// Типографика применяется на сборке: в src лежит обычный текст,
+// в _site уезжает уже с неразрывными пробелами и правильными знаками.
+const typograf = new Typograf({ locale: ["ru", "en-US"] });
+
+typograf.addSafeTag("<pre>", "</pre>");
+typograf.addSafeTag("<code>", "</code>");
+
+// Многоточие оставляем тремя точками
+typograf.disableRule("common/punctuation/hellip");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pugPlugin);
@@ -24,6 +35,10 @@ module.exports = function (eleventyConfig) {
         return project;
       })
       .sort((a, b) => b.date - a.date)
+  );
+
+  eleventyConfig.addTransform("typograf", (content, outputPath) =>
+    outputPath && outputPath.endsWith(".html") ? typograf.execute(content) : content
   );
 
   return {

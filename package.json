@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/almasakuro/my-site#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.6"
+    "@11ty/eleventy": "^3.1.6",
+    "typograf": "^7.7.0"
   },
   "dependencies": {
     "@11ty/eleventy-plugin-pug": "^1.0.0"
