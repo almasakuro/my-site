@@ -6,10 +6,10 @@ p.welcome-text Я — Алмас Акжигитов. Занимаюсь граф
 
 div.projects
     each project in collections.projects
-        a.project(href=project.url, class=project.data.big ? "project-big" : null)
+        a.project(href=project.url, class=project.data.cover_size === "big" ? "project-big" : null)
             if project.data.cover
                 if /\.(mp4|webm|mov)$/.test(project.data.cover)
                     video(src=project.data.cover, autoplay, muted, loop, playsinline)
                 else
                     img(src=project.data.cover, alt="")
-            p.caption= project.data.title
+            div.caption= project.data.title

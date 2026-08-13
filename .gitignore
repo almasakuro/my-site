@@ -141,3 +141,6 @@ _site/
 # Claude Code
 .claude/
 CLAUDE.local.md
+
+# Старый сайт, справочник
+old-site/
