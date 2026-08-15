@@ -144,9 +144,15 @@ p{
 }
 
 h1{
-    font-size: 4em;
+    font-size: 4rem;
     line-height: 1;
     font-weight: 400;
+}
+
+@media (width < 700px) {
+    h1{
+        font-size: 2rem;
+    }
 }
 
 h2{
@@ -156,7 +162,7 @@ h2{
 }
 
 h3{ 
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -190,7 +196,7 @@ code{
 .caption{
     font-family: PT Astra Sans, Helvetica Neue, Helvetica, Arial, sans-serif;;
     max-width: 1040px;
-    font-size: 1em
+    font-size: 1rem
 }
 
 /* Отступы по правилу внутреннего и внешнего.
@@ -276,7 +282,7 @@ header img{
     margin-top: 20px;
     max-width: 900px;
     font-family: PT Astra Sans;
-    font-size: 2em;
+    font-size: 2rem;
     line-height: 1.2;
 }
 
