@@ -287,17 +287,27 @@ header img{
 }
 
 footer{
-    height: 120px;
+    min-height: 120px;
     margin-top: 200px;
     gap: 15px;
 
-    display: grid;
-    grid-template-columns: repeat(6, auto) 1fr auto;
-
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
-footer .caption{
-    grid-column: 8;
+
+@media (width < 600px) {
+    footer{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+.socials{
+    display: flex;
+    gap: 15px;
+    padding: 0;
 }
 
 .social{
