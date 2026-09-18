@@ -146,15 +146,15 @@ p {
     font-size: 1.25rem;
 }
 
+h1 {
+    font-size: 4rem;
+    line-height: 1;
+}
+
 @media (width < 700px) {
     h1{
         font-size: 2rem;
     }
-}
-
-h1 {
-    font-size: 4rem;
-    line-height: 1;
 }
 
 h2 {
