@@ -267,6 +267,11 @@ article img{
     width: 100%;
 }
 
+/* Картинка по ширине текстовой колонки */
+.narrow-image{
+    max-width: 900px;
+}
+
 header{
     height: 150px;
     display: flex;
