@@ -23,6 +23,12 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addWatchTarget("src/css/");
 
+  // Полигон живёт только на локальном сервере: при сборке Eleventy
+  // вообще не видит этот файл, и в _site он не попадает.
+  if (process.env.ELEVENTY_RUN_MODE === "build") {
+    eleventyConfig.ignores.add("src/playground.pug");
+  }
+
   eleventyConfig.addCollection("projects", (api) =>
     api
       .getFilteredByGlob("./src/design/*/index.pug")
