@@ -284,6 +284,8 @@ header{
     text-align: center;
     font-family: PT Astra Serif, 'Times New Roman', Times, serif;
     font-size: 1.25rem;
+
+    margin-bottom: 40px;
 }
 
 /* Ссылка на главную не должна выглядеть ссылкой */
