@@ -1,0 +1,17 @@
+//- Общая библиотека миксинов.
+
+//- Бирка: имя заказчика и ссылки на его кейсы.
+//- +label("Кёнигсбратен", collections.projects)
+//- Отбирает нужные кейсы сам, выводится только если их больше одного.
+mixin label(title, list)
+    - const siblings = (list || []).filter(item => item.data.client === title)
+    if siblings.length > 1
+        div.label-nav
+            p.caption #{title}:
+            each item in siblings
+                a(href=item.url, aria-current=(item.url === page.url ? "page" : false))= item.data.local_title
+
+//- Метаданные
+mixin meta(date, link, message)
+    p #[i 11 декабря 2026]
+    //- Пока пусть пустует

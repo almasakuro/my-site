@@ -15,7 +15,12 @@ typograf.addSafeTag("<code>", "</code>");
 typograf.disableRule("common/punctuation/hellip");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(pugPlugin);
+  eleventyConfig.addPlugin(pugPlugin, { basedir: "src/_includes" });
+
+  // Миксины подключаются ко всем .pug автоматически
+  eleventyConfig.addPreprocessor("mixins", "pug", (data, content) =>
+    "include /mixins.pug\n" + content
+  );
   eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/fonts");
