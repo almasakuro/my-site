@@ -163,7 +163,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 a{
@@ -273,14 +273,23 @@ article img{
 }
 
 header{
-    height: 150px;
+    height: 60px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
+    
+    border-bottom: 1px solid #252525;
+
+    text-align: center;
+    font-family: PT Astra Serif, 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
 }
 
-header img{
-    height: 88px;
+/* Ссылка на главную не должна выглядеть ссылкой */
+header a{
+    color: inherit;
+    text-decoration: none;
 }
 
 .welcome-text{

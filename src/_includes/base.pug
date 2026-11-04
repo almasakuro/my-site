@@ -1,30 +1,35 @@
+- const siteName = "Алмас Акжигитов"
+- const pageTitle = title || siteName
+- const pageDescription = description || "Помогаю создавать и улучшать сервисы и продукты, которым нужен фирменный стиль, графический дизайн, сайт, интерфейс, упаковка и навигация."
+- const pageUrl = "https://almasakzhigitov.com" + page.url
+- const pageImage = "https://almasakzhigitov.com" + (banner || "/banner.png")
+
 doctype html
 html(lang="ru")
-  head
-    meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
 
-    title= title ? title + " — Алмас Акжигитов" : "Алмас Акжигитов"
-    meta(name="description" content=description || "Алмас Акжигитов — дизайнер из Астаны. Графика, веб, айдентика, интерфейсы.")
+        title= pageTitle
+        meta(name="description" content=pageDescription)
+        link(rel="canonical" href=pageUrl)
 
-    link(rel="canonical" href="https://almasakzhigitov.com" + page.url)
+        link(rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml")
+        link(rel="icon" href="/images/favicon-32.png" sizes="32x32")
+        link(rel="apple-touch-icon" href="/images/apple-touch-icon.png" sizes="180x180")
+        link(rel="stylesheet" href="/css/style.css")
 
-    link(rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml")
-    link(rel="icon" href="/images/favicon-32.png" sizes="32x32")
-    link(rel="apple-touch-icon" href="/images/apple-touch-icon.png" sizes="180x180")
+        meta(property="og:type" content="website")
+        meta(property="og:site_name" content=siteName)
+        meta(property="og:title" content=pageTitle)
+        meta(property="og:description" content=pageDescription)
+        meta(property="og:url" content=pageUrl)
+        meta(property="og:image" content=pageImage)
+        meta(property="og:locale" content="ru_RU")
+        meta(name="twitter:card" content="summary_large_image")
 
-    link(rel="stylesheet" href="/css/style.css")
-
-    meta(property="og:type" content="website")
-    meta(property="og:title" content=title || "Алмас Акжигитов")
-    meta(property="og:url" content="https://almasakzhigitov.com" + page.url)
-    if banner
-      meta(property="og:image" content="https://almasakzhigitov.com" + banner)
-
-  body
-    include header.pug
-
-    main.layout-container
-      != content
-
-    include footer.pug
+    body
+        include header.pug
+        main.layout-container
+            != content
+        include footer.pug
